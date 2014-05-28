@@ -7,28 +7,28 @@
     "resources": {
         "media": [
             {
-                "file": "images/preview.png",
-                "type": "png",
-                "name": "IMAGE_PREVIEW",
-                "menuIcon": true
+                "file": "fonts/Helvetica-Bold.ttf",
+                "type": "font",
+                "name": "FONT_HELVETICA_BOLD_38",
+                "characterRegex": "[a-z]"
             },
             {
                 "file": "fonts/Helvetica-Normal.ttf",
                 "type": "font",
-                "name": "FONT_HELVETICA_30",
+                "name": "FONT_HELVETICA_38",
                 "characterRegex": "[a-z']"
             },
             {
                 "file": "fonts/Helvetica-Normal.ttf",
                 "type": "font",
-                "name": "FONT_HELVETICA_18",
+                "name": "FONT_HELVETICA_24",
                 "characterRegex": "[a-z0-9 ]"
             },
             {
-                "file": "fonts/Helvetica-Bold.ttf",
-                "type": "font",
-                "name": "FONT_HELVETICA_BOLD_30",
-                "characterRegex": "[a-z]"
+                "file": "images/preview.png",
+                "type": "png",
+                "name": "IMAGE_PREVIEW",
+                "menuIcon": true
             }
         ]
     },
