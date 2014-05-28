@@ -4,13 +4,13 @@ Window *window;
 InverterLayer *inverter_layer;
 
 TextLayer *time1_text_layer;
-char time1_buffer[] = "xxxxxxxxxx";
+char time1_buffer[] = "xxxxxxxx";
 TextLayer *time2_text_layer;
-char time2_buffer[] = "xxxxxxxxxx";
+char time2_buffer[] = "xxxxxxxx";
 TextLayer *time3_text_layer;
-char time3_buffer[] = "xxxxxxxxxx";
+char time3_buffer[] = "xxxxxxxx";
 TextLayer *date_text_layer;
-char date_buffer[] = "xxxxxxxxxxxxxxxxxxxx";
+char date_buffer[] = "xxxxxxxxxxx";
 
 void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   if (units_changed & MINUTE_UNIT) {
@@ -96,28 +96,31 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
       switch (one) {
         case 0:
           strcpy(time2_buffer, "ten");
+		  strcpy(time3_buffer, "");
           break;
         case 1:
           strcpy(time2_buffer, "eleven");
+		  strcpy(time3_buffer, "");
           break;
         case 2:
           strcpy(time2_buffer, "twelve");
+		  strcpy(time3_buffer, "");
           break;
         case 3:
-          strcpy(time2_buffer, "thir");
-		  strcpy(time3_buffer, "teen");
+          strcpy(time2_buffer, "thirteen");
+		  strcpy(time3_buffer, "");
           break;
         case 4:
           strcpy(time2_buffer, "four");
 		  strcpy(time3_buffer, "teen");
           break;
         case 5:
-          strcpy(time2_buffer, "fif");
-		  strcpy(time3_buffer, "teen");
+          strcpy(time2_buffer, "fifteen");
+		  strcpy(time3_buffer, "");
           break;
         case 6:
-          strcpy(time2_buffer, "six");
-		  strcpy(time3_buffer, "teen");
+          strcpy(time2_buffer, "sixteen");
+		  strcpy(time3_buffer, "");
           break;
         case 7:
           strcpy(time2_buffer, "seven");
@@ -132,7 +135,6 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 		  strcpy(time3_buffer, "teen");
           break;
       }
-      //strcpy(time3_buffer, "");
     } else {
       switch (ten) {
         case 2:
@@ -260,28 +262,28 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 }
 
 void window_load(Window *window) {
-  time1_text_layer = text_layer_create(GRect(3, 10, 140, 64));
+  time1_text_layer = text_layer_create(GRect(3, 0, 141, 64));
   text_layer_set_background_color(time1_text_layer, GColorClear);
   text_layer_set_text_color(time1_text_layer, GColorBlack);
-  text_layer_set_font(time1_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_BOLD_38)));
+  text_layer_set_font(time1_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_BOLD_42)));
   text_layer_set_text(time1_text_layer, time1_buffer);
   layer_add_child(window_get_root_layer(window), (Layer*) time1_text_layer);
   
-  time2_text_layer = text_layer_create(GRect(3, 45, 140, 64));
+  time2_text_layer = text_layer_create(GRect(3, 40, 141, 64));
   text_layer_set_background_color(time2_text_layer, GColorClear);
   text_layer_set_text_color(time2_text_layer, GColorBlack);
-  text_layer_set_font(time2_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_38)));
+  text_layer_set_font(time2_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_42)));
   text_layer_set_text(time2_text_layer, time2_buffer);
   layer_add_child(window_get_root_layer(window), (Layer*) time2_text_layer);
   
-  time3_text_layer = text_layer_create(GRect(3, 80, 140, 64));
+  time3_text_layer = text_layer_create(GRect(3, 80, 141, 64));
   text_layer_set_background_color(time3_text_layer, GColorClear);
   text_layer_set_text_color(time3_text_layer, GColorBlack);
-  text_layer_set_font(time3_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_38)));
+  text_layer_set_font(time3_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_42)));
   text_layer_set_text(time3_text_layer, time3_buffer);
   layer_add_child(window_get_root_layer(window), (Layer*) time3_text_layer);
   
-  date_text_layer = text_layer_create(GRect(0, 138, 140, 30));
+  date_text_layer = text_layer_create(GRect(0, 135, 138, 30));
   text_layer_set_background_color(date_text_layer, GColorClear);
   text_layer_set_text_color(date_text_layer, GColorBlack);
   text_layer_set_text_alignment(date_text_layer, GTextAlignmentRight);
