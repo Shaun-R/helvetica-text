@@ -262,21 +262,21 @@ void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 }
 
 void window_load(Window *window) {
-  time1_text_layer = text_layer_create(GRect(3, 0, 141, 64));
+  time1_text_layer = text_layer_create(GRect(1, 0, 143, 64));
   text_layer_set_background_color(time1_text_layer, GColorClear);
   text_layer_set_text_color(time1_text_layer, GColorBlack);
   text_layer_set_font(time1_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_BOLD_42)));
   text_layer_set_text(time1_text_layer, time1_buffer);
   layer_add_child(window_get_root_layer(window), (Layer*) time1_text_layer);
   
-  time2_text_layer = text_layer_create(GRect(3, 40, 141, 64));
+  time2_text_layer = text_layer_create(GRect(1, 40, 143, 64));
   text_layer_set_background_color(time2_text_layer, GColorClear);
   text_layer_set_text_color(time2_text_layer, GColorBlack);
   text_layer_set_font(time2_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_42)));
   text_layer_set_text(time2_text_layer, time2_buffer);
   layer_add_child(window_get_root_layer(window), (Layer*) time2_text_layer);
   
-  time3_text_layer = text_layer_create(GRect(3, 80, 141, 64));
+  time3_text_layer = text_layer_create(GRect(1, 80, 143, 64));
   text_layer_set_background_color(time3_text_layer, GColorClear);
   text_layer_set_text_color(time3_text_layer, GColorBlack);
   text_layer_set_font(time3_text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_HELVETICA_42)));
